@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars"></div>
+    
+    <!-- Hero Section -->
+    <section id="hero" class="section active">
+        <h1>Happy Birthday, My Love!</h1>
+        <p>October 9th is all about you.</p>
+        <button onclick="nextSection('itinerary')">See What's Planned ✨</button>
+    </section>
+
+    <!-- Itinerary Section -->
+    <section id="itinerary" class="section hidden">
+        <h2>Birthday Itinerary</h2>
+        <div class="timeline">
+            <div class="event">
+                <div class="time">Lunch Time</div>
+                <div class="desc">Birthday Lunch Together 🍽️</div>
+            </div>
+            <div class="event">
+                <div class="time">Afternoon</div>
+                <div class="desc">Photobooth Session 📸</div>
+            </div>
+            <div class="event">
+                <div class="time">Evening</div>
+                <div class="desc">More Magical Surprises... ✨</div>
+            </div>
+        </div>
+        <button onclick="nextSection('dresscode')">Next 🤎</button>
+    </section>
+
+    <!-- Dress Code Section -->
+    <section id="dresscode" class="section hidden">
+        <h2>Dress Code</h2>
+        <div class="dresscode-card">
+            <h3>Theme: <span class="highlight">Brown</span> 🤎</h3>
+            <p>Wear your absolute best fits! Let's make it a magical day.</p>
+            <div class="sparkles">✨ ✨ ✨</div>
+        </div>
+        <button onclick="nextSection('letter')">Open Your Letter ✉️</button>
+    </section>
+
+    <!-- Letter Section -->
+    <section id="letter" class="section hidden">
+        <h2>A Letter For You</h2>
+        <p style="font-size: 0.9rem; margin-bottom: 20px; color: #d4a373;">(Click the envelope to open)</p>
+        <div class="envelope" onclick="openLetter()">
+            <div class="flap"></div>
+            <div class="envelope-body"></div>
+            <div class="paper">
+                <p>Dear Birthday Girl,</p>
+                <p>Happy Birthday! I'm so excited to celebrate this special day with you. You mean the world to me and I hope today brings you as much joy as you bring me every day.</p>
+                <p>Love always,<br>Your Boyfriend</p>
+            </div>
+        </div>
+        <button onclick="nextSection('hero')" style="margin-top: 50px;">Back to Start</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
