@@ -1,51 +1,38 @@
 function nextSection(sectionId) {
-    // Hide current active section
     const current = document.querySelector('.section.active');
-    if (current) {
-        current.classList.remove('active');
-        
-        // Wait a tiny bit for fade out before showing next
-        setTimeout(() => {
-            const next = document.getElementById(sectionId);
-            if (next) {
-                next.classList.add('active');
-            }
-        }, 400); // Wait half of the CSS transition time
-    }
+    if (current) current.classList.remove('active');
+    
+    const next = document.getElementById(sectionId);
+    if (next) next.classList.add('active');
 }
 
-function openLetter() {
-    const envelope = document.querySelector('.envelope');
-    envelope.classList.toggle('open');
-}
-
-// Generate magical stars in the background
+// Generate floating elements
 document.addEventListener("DOMContentLoaded", () => {
-    const starsContainer = document.querySelector('.stars');
-    const numberOfStars = 60;
+    const container = document.getElementById('floating-elements');
+    // Using emojis for bubbles, fish, lemons, cds, notes
+    const elements = ['🫧', '🫧', '🐟', '🍋', '🍀', '🎵', '💿', '🫧', '🐠', '☁️', '🎶', '🫧'];
+    const numberOfItems = 40;
 
-    for (let i = 0; i < numberOfStars; i++) {
-        const star = document.createElement('div');
+    for (let i = 0; i < numberOfItems; i++) {
+        const el = document.createElement('div');
+        el.className = 'floating-item';
+        el.textContent = elements[Math.floor(Math.random() * elements.length)];
         
-        // Randomize position
-        star.style.position = 'absolute';
-        star.style.left = Math.random() * 100 + 'vw';
-        star.style.top = Math.random() * 100 + 'vh';
+        // Randomize horizontal position
+        el.style.left = Math.random() * 100 + 'vw';
         
-        // Randomize size
-        star.style.width = Math.random() * 3 + 1 + 'px';
-        star.style.height = star.style.width;
+        // Random duration and delay
+        const duration = Math.random() * 15 + 10; // 10s to 25s
+        const delay = Math.random() * -30; // Start at different times
+        el.style.animationDuration = duration + 's';
+        el.style.animationDelay = delay + 's';
         
-        // Styling
-        star.style.backgroundColor = '#faedcd';
-        star.style.borderRadius = '50%';
-        star.style.opacity = Math.random();
+        // Random size
+        const size = Math.random() * 2.5 + 1.5; // 1.5rem to 4rem
+        el.style.fontSize = size + 'rem';
         
-        // Randomize twinkle animation
-        const animationDuration = Math.random() * 2 + 1;
-        const animationDelay = Math.random() * 2;
-        star.style.animation = `twinkle ${animationDuration}s ${animationDelay}s infinite alternate`;
+        // Random rotation speed if wanted (handled in CSS mostly, but we could add more inline styles)
         
-        starsContainer.appendChild(star);
+        container.appendChild(el);
     }
 });

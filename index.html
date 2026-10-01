@@ -5,63 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday!</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="stars"></div>
-    
+    <!-- Floating elements container -->
+    <div id="floating-elements"></div>
+
     <!-- Hero Section -->
     <section id="hero" class="section active">
-        <h1>Happy Birthday, My Love!</h1>
-        <p>October 9th is all about you.</p>
-        <button onclick="nextSection('itinerary')">See What's Planned ✨</button>
+        <h1 class="bubble-text">KITSCH POP</h1>
+        <div class="subtitle-wrapper">
+            <span class="blue-cursive">Calling!! All Gen Z<br>Dreames</span>
+            <span class="serif-text">Kpop Idol Muses Only</span>
+        </div>
+        <div class="windows-dialog" style="margin-top: 30px;">
+            <div class="dialog-header">
+                <span>Windows error</span>
+                <button class="win-close">X</button>
+            </div>
+            <div class="dialog-body">
+                <p style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                    <span style="font-size: 24px;">⚠️</span> Click 'OK' to join
+                </p>
+                <button class="win-button" style="margin-top: 15px;" onclick="nextSection('itinerary')">OK</button>
+            </div>
+        </div>
     </section>
 
     <!-- Itinerary Section -->
     <section id="itinerary" class="section hidden">
-        <h2>Birthday Itinerary</h2>
-        <div class="timeline">
-            <div class="event">
-                <div class="time">Lunch Time</div>
-                <div class="desc">Birthday Lunch Together 🍽️</div>
+        <div class="windows-window">
+            <div class="window-header">
+                <span>Untitled - Notepad</span>
+                <div class="win-controls">
+                    <button>_</button><button>□</button><button class="win-close" onclick="nextSection('hero')">X</button>
+                </div>
             </div>
-            <div class="event">
-                <div class="time">Afternoon</div>
-                <div class="desc">Photobooth Session 📸</div>
+            <div class="window-menu">
+                <span>File</span><span>Edit</span><span>Search</span><span>Help</span>
             </div>
-            <div class="event">
-                <div class="time">Evening</div>
-                <div class="desc">More Magical Surprises... ✨</div>
+            <div class="window-body">
+                <h2 class="bubble-text small" style="color: #FF00FF; -webkit-text-stroke: 1px #fff; text-shadow: 2px 2px 0 #000;">PLANS</h2>
+                <ul class="retro-list">
+                    <li><strong>12:00 PM:</strong> Birthday Lunch 🍽️</li>
+                    <li><strong>3:00 PM:</strong> Photobooth Session 📸</li>
+                    <li><strong>Evening:</strong> Magical Surprises ✨</li>
+                </ul>
+                <div style="text-align: right; margin-top: 20px;">
+                    <button class="win-button" onclick="nextSection('dresscode')">Next -></button>
+                </div>
             </div>
         </div>
-        <button onclick="nextSection('dresscode')">Next 🤎</button>
     </section>
 
     <!-- Dress Code Section -->
     <section id="dresscode" class="section hidden">
-        <h2>Dress Code</h2>
-        <div class="dresscode-card">
-            <h3>Theme: <span class="highlight">Brown</span> 🤎</h3>
-            <p>Wear your absolute best fits! Let's make it a magical day.</p>
-            <div class="sparkles">✨ ✨ ✨</div>
+        <div class="windows-dialog" style="text-align: center;">
+            <div class="dialog-header">
+                <span>DressCode.exe</span>
+                <button class="win-close" onclick="nextSection('itinerary')">X</button>
+            </div>
+            <div class="dialog-body" style="background: #fff; border: inset 2px;">
+                <h2 class="bubble-text small" style="color: #00FF00; -webkit-text-stroke: 1px #006400;">BROWN</h2>
+                <p class="serif-text" style="color: #000; text-shadow: none; font-size: 1.2rem; font-family: 'Times New Roman', serif;">Wear your absolute best fits!</p>
+                <br>
+                <button class="win-button" style="background: #E0FFFF; border: 2px solid #008B8B; padding: 10px 20px; font-weight: bold; font-family: serif; font-size: 1.2rem;" onclick="nextSection('letter')">OPEN GATE!</button>
+            </div>
         </div>
-        <button onclick="nextSection('letter')">Open Your Letter ✉️</button>
     </section>
 
     <!-- Letter Section -->
     <section id="letter" class="section hidden">
-        <h2>A Letter For You</h2>
-        <p style="font-size: 0.9rem; margin-bottom: 20px; color: #d4a373;">(Click the envelope to open)</p>
-        <div class="envelope" onclick="openLetter()">
-            <div class="flap"></div>
-            <div class="envelope-body"></div>
-            <div class="paper">
+        <div class="windows-window">
+            <div class="window-header">
+                <span>Message_From_Boyfriend.txt - Notepad</span>
+                <div class="win-controls">
+                    <button>_</button><button>□</button><button class="win-close" onclick="nextSection('hero')">X</button>
+                </div>
+            </div>
+            <div class="window-menu">
+                <span>File</span><span>Edit</span><span>Search</span><span>Help</span>
+            </div>
+            <div class="window-body" style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; line-height: 1.5; color: blue;">
                 <p>Dear Birthday Girl,</p>
+                <br>
                 <p>Happy Birthday! I'm so excited to celebrate this special day with you. You mean the world to me and I hope today brings you as much joy as you bring me every day.</p>
-                <p>Love always,<br>Your Boyfriend</p>
+                <br>
+                <p>Love always,<br>Your Boyfriend <3</p>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="win-button" onclick="nextSection('hero')">Close File</button>
+                </div>
             </div>
         </div>
-        <button onclick="nextSection('hero')" style="margin-top: 50px;">Back to Start</button>
     </section>
 
     <script src="script.js"></script>
